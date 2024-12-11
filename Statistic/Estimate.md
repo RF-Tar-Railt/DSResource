@@ -8,9 +8,11 @@ Point estimation is a single value (or point) used to approximate a population p
 
 - $X$: random variable
 - $\theta$: parameter of interest, unknown
-    $$
-    X_1, X_2, \cdots, X_n \sim f(x; \theta)
-    $$
+
+$$
+X_1, X_2, \cdots, X_n \sim f(x; \theta)
+$$
+
 - $\hat{\theta} = \theta(X_1, X_2, \cdots, X_n)$: estimator of $\theta$
 - Previously, we found good(?) estimator(s) for $\theta$ or $\theta$'s function(s) using method of moments, maximum likelihood, etc.
 
@@ -33,9 +35,11 @@ Otherwise, $\hat{\theta}$ is biased.  $bias(\hat{\theta}) = E(\hat{\theta}) - \t
 ### Consistent Estimator (一致估计)
 
 $\hat{\theta}$ is a consistent estimator for parameter $\theta$ for all $\theta$ if
+
 $$
 \hat{\theta} \overset{p}{\rightarrow} \theta
 $$
+
 $$
 P\left| \hat{\theta} - \theta \right| \geq \varepsilon \rightarrow 0 \quad \text{as } n \rightarrow \infty
 $$
@@ -47,6 +51,7 @@ For large n, a consistent estimator tends to be closer to  the unknown populatio
 An Efficient Estimator tends to fall closer to $\theta$, on the average, than other estimators. 与其他估计量相比，有效估计量平均倾向于更接近 $\theta$。
 
 MSE (Mean Squared Error): 
+
 $$
 MSE(\hat{\theta}) = {E\left[ \hat{\theta} - \theta \right]}^2
     = var(\hat{\theta}) + {\left[ E(\hat{\theta}) - \theta \right]}^2
@@ -60,6 +65,7 @@ The best one with smallest MSE is a minimum variance unbiased estimator. 具有�
 ### Maximum Likelihood Estimator (MLE) (最大似然估计)
 
 Given a random sample $X_1, X_2, \cdots, X_n$ from a population with pdf $f(x; \theta)$, the likelihood function is
+
 $$
 L(\theta) = \prod_{i=1}^{n} f(x_i; \theta)
 $$
@@ -102,6 +108,7 @@ Then critical values = $\pm z_{\alpha/2}$
 ### Margin of Error (误差边界)
 
 Margin of Error denoted by E, is the maximum likely difference (with probability 1 – $\alpha$ , such as 0.95) between the observed estimate and the true population parameter. It can be found by multiplying the critical value and the standard error. 误差边界 E 是观察估计值和真实总体参数之间的最大可能差异（概率为 1 - $\alpha$，例如 0.95）。可以通过将临界值与标准误差相乘来找到。
+
 $$
 ME = z_{\alpha/2} \times SE
 $$
@@ -125,6 +132,7 @@ $$
 $$
 CI = \hat{p} \pm z_{\alpha/2} \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
 $$
+
 - $\hat{p}$: sample proportion
 
 ### Variance of a Population (总体方差的置信区间)
@@ -134,6 +142,7 @@ Variances of a population can be estimated using the chi-square distribution. �
 $$
 CI = \left[ \frac{(n-1)s^2}{\chi^2_{\alpha/2, n-1}}, \frac{(n-1)s^2}{\chi^2_{1-\alpha/2, n-1}} \right]
 $$
+
 - $s^2$: sample variance
 
 ## Two-Sample Confidence Interval (双样本置信区间)
@@ -143,6 +152,7 @@ $$
 #### Independent Samples (独立样本)
 
 - Large Sample, Known $\sigma_1$ and $\sigma_2$:
+
 $$
 z = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}} \sim N(0, 1)
 \quad,
@@ -150,6 +160,7 @@ CI = (\bar{x}_1 - \bar{x}_2) \pm z_{\alpha/2} \cdot \sqrt{\frac{\sigma_1^2}{n_1}
 $$
 
 - Large Sample, Unknown $\sigma_1$ and $\sigma_2$:
+
 $$
 CI = (\bar{x}_1 - \bar{x}_2) \pm z_{\alpha/2} \cdot \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}
 $$
@@ -157,15 +168,19 @@ $$
 - Small Sample
   - Assumption: 1. Normality, 2. Two random samples are drawn independently from two populations.
   - Unknown $\sigma_1$ and $\sigma_2$ (equal):
+
 $$
 {s_p}^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}, df = n_1 + n_2 - 2
 $$
+
 $$
 t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{s_p \cdot \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \sim t(df)
 \quad,
 CI = (\bar{x}_1 - \bar{x}_2) \pm t_{\alpha/2, df} \cdot s_p \cdot \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}
 $$
+
   - Unknown $\sigma_1$ and $\sigma_2$ (not equal):
+
 $$
 df = \frac{\left( \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} \right)^2}{\frac{{(s_1^2/n_1)}^2}{n_1 - 1} + \frac{{(s_2^2/n_2)}^2}{n_2 - 1}}
 \quad,
@@ -205,6 +220,7 @@ df_1 = n_1 - 1, df_2 = n_2 - 1
 \quad,
 CI = \left[ \frac{s_1^2 / s_2^2}{F_{\alpha/2}}, \frac{s_1^2 / s_2^2}{F_{1-\alpha/2}} \right]
 $$
+
 $$
 F_{1-\alpha/2}(df_1, df_2) = \frac{1}{F_{\alpha/2}(df_2, df_1)}
 $$
@@ -215,4 +231,4 @@ $$
 - Proportion of a Population (总体比例): $n = \lceil \left( \frac{z_{\alpha/2} \cdot \sqrt{p(1-p)}}{E} \right)^2 \rceil$
 
 ## Summary
-![[Pasted image 20241211131454.png]]
+![](./CI-Summary.png)
