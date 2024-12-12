@@ -28,10 +28,10 @@ Because your decision is based on a sample, there is the possibility of making t
 - Type I Error: Rejecting a true null hypothesis 原假设为真，却拒绝了原假设
 - Type II Error: Failing to reject a false null hypothesis 原假设为假，却没有拒绝原假设
 
-| Project | Not rejected $H_0$ | Rejected $H_0$ |
-| --- | --- | --- |
-| $H_0$ is true | 1 - $\alpha$ | $\alpha$ (Type I Error) |
-| $H_0$ is false | $\beta$ | 1 - $\beta$ (Power of the test) |
+| Project        | Not rejected $H_0$ | Rejected $H_0$                  |
+|----------------|--------------------|---------------------------------|
+| $H_0$ is true  | 1 - $\alpha$       | $\alpha$ (Type I Error)         |
+| $H_0$ is false | $\beta$            | 1 - $\beta$ (Power of the test) |
 
 ### Level of Significance
 
@@ -43,12 +43,12 @@ Commonly used levels of significance are 0.01, 0.05, and 0.10. 通常使用的�
 
 ## Statistical Tests
 
-| Parameter | Sampling Distribution | Test Statistic |
-| --- | --- | --- |
-| Proportion: $p$ | Normal | $Z = \frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}}$ |
-| Mean: $\mu$ | Normal | $Z = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}}$ |
-| Mean: $\mu$ | t | $t = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}}$ |
-| Variance: $\sigma^2$ | Chi-square | $\chi^2 = \frac{(n-1)s^2}{\sigma^2}$ |
+| Parameter            | Sampling Distribution | Test Statistic                                      |
+|----------------------|-----------------------|-----------------------------------------------------|
+| Proportion: $p$      | Normal                | $Z = \frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}}$   |
+| Mean: $\mu$          | Normal                | $Z = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}}$ |
+| Mean: $\mu$          | t                     | $t = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}}$      |
+| Variance: $\sigma^2$ | Chi-square            | $\chi^2 = \frac{(n-1)s^2}{\sigma^2}$                |
 
 ### Types of Hypothesis Tests
 
@@ -80,10 +80,10 @@ Parametric tests are restricted to data that:
 
 test population mean ($\mu$):
 
-| Sample Size         | $\sigma$ Known                                      | $\sigma$ Unknown                               |
-| ------------------- | --------------------------------------------------- | ---------------------------------------------- |
-| Large ($n \geq 30$) | $Z = \frac{\bar{x} - \mu_0}{\sigma/\sqrt{n}}$         | $Z = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}$         |
-| Small ($n < 30$)    | $Z = \frac{\bar{x} - \mu_0}{\sigma/\sqrt{n}}$         | $t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}$         |
+| Sample Size         | $\sigma$ Known                                | $\sigma$ Unknown                         |
+|---------------------|-----------------------------------------------|------------------------------------------|
+| Large ($n \geq 30$) | $Z = \frac{\bar{x} - \mu_0}{\sigma/\sqrt{n}}$ | $Z = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}$ |
+| Small ($n < 30$)    | $Z = \frac{\bar{x} - \mu_0}{\sigma/\sqrt{n}}$ | $t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}$ |
 
 - $\mu_0$: hypothesized population mean 假设的总体均值
 - Z compared to $Z_{\alpha}$, t compared to $t_{\alpha, n-1}$
@@ -194,7 +194,7 @@ Non-parametric tests are used on data that:
 - $H_a$: $\sigma_1^2 \neq \sigma_2^2$
 
 $$
-L = \frac{(N-k)}{k-1} \left( \frac{\sum_{i=1}^{k} n_i (\bar{z}_i - \bar{z})^2}{\sum_{i=1}^{k} \sum_{j=1}^{n_i} (z_{ij} - \bar{z}_i)^2} \right) \sim F(k-1, N-k)
+L = \frac{(N-k)}{k-1} \left( \frac{\sum_{i=1}^{k} n_{i} (\bar{z}_{i} - \bar{z})^2}{\sum_{i=1}^{k} \sum_{j=1}^{n_i} (z_{ij} - \bar{z}_i)^2} \right) \sim F(k-1, N-k)
 $$
 
 - $N$: total number of cases
@@ -214,19 +214,15 @@ The Mann-Whitney U-Test is non-parametric counterpart to the t-test for independ
 - $H_0$: There is no difference (in terms of median) between the two groups 两组之间没有差异（中位数）
 - $H_a$: There is a difference (in terms of median) between the two groups 两组之间有差异（中位数）
 
-| Sample1 | Sample2 | $R_1$ | $R_2$ |
-| --- | --- | --- | --- |
-|  34 |     |  2  |     |
-|  36 |     |  4  |     |
-|     |  45 |     |  11 |
-|     |  33 |     |  1  |
-|  41 |     |  7  |     |
-|  43 |     |  9  |     |
-|     |  35 |     |  3  |
-|  44 |     |  10 |     |
-|  37 |     |  5  |     |
-|     |  39 |     |  6  |
-|     |  42 |     |  8  |
+| Sample1 | Sample2 |
+|---------|---------|
+| 34 (2)  | 45 (11) |
+| 36 (4)  | 33 (1)  |
+| 41 (7)  | 35 (3)  |
+| 43 (9)  | 39 (6)  |
+| 44 (10) | 42 (8)  |
+| 37 (5)  |         |
+
 
 > If there are ties, the average rank is used. 如果有并列，使用平均秩。
 > e.g. \[1, 2, 2, 3, 4, 4, 4] => \[1, 2.5, 2.5, 4, 6, 6, 6] (2.5 = (2+3)/2, 6 = (5+6+7)/3)
@@ -271,15 +267,15 @@ Assumptions of the Wilcoxon test:
 - $H_a$: There is a difference (in terms of median) between the two groups 两组之间有差异（中位数）
 
 | Sample1 | Sample2 | $d_i$ | $\|d_i\|$ | $R_i$ | $R_i^+$ | $R_i^-$ |
-| --- | --- | --- | --- | --- | --- | --- |
-|  43 | 44  | -1  |  1  |  1  |     |  1  |
-|  36 | 38  | -2  |  2  |  3  |     |  3  |
-|  43 | 41  |  2  |  2  |  3  |  3  |     |
-|  41 | 39  |  2  |  2  |  3  |  3  |     |
-|  37 | 34  |  3  |  3  |  5  |  5  |     |
-|  37 | 41  | -4  |  4  | 6.5 |     | 6.5 |
-|  43 | 39  |  4  |  4  | 6.5 | 6.5 |     |
-|  40 | 34  |  6  |  6  |  8  |  8  |     |
+|---------|---------|-------|-----------|-------|---------|---------|
+| 43      | 44      | -1    | 1         | 1     |         | 1       |
+| 36      | 38      | -2    | 2         | 3     |         | 3       |
+| 43      | 41      | 2     | 2         | 3     | 3       |         |
+| 41      | 39      | 2     | 2         | 3     | 3       |         |
+| 37      | 34      | 3     | 3         | 5     | 5       |         |
+| 37      | 41      | -4    | 4         | 6.5   |         | 6.5     |
+| 43      | 39      | 4     | 4         | 6.5   | 6.5     |         |
+| 40      | 34      | 6     | 6         | 8     | 8       |         |
 
 $$
 T^+ = \sum R_i^+ \quad \text{,} \quad T^- = \sum R_i^-
@@ -332,11 +328,11 @@ $$
 
 #### ANOVA Table
 
-| Source of Variation | Sum of Squares (SS) | Degrees of Freedom (df) | Mean Square (MS) | F |
-| --- | --- | --- | --- | --- |
-| Between Groups | $SS_{group}$ | $df_1$ | $MSG$ | $F$ |
-| Within Groups | $SS_{error}$ | $df_2$ | $MSE$ |  |
-| Total | $SS_{total}$ | $df$ |  |  |
+| Source of Variation | Sum of Squares (SS) | Degrees of Freedom (df) | Mean Square (MS) | F   |
+|---------------------|---------------------|-------------------------|------------------|-----|
+| Between Groups      | $SS_{group}$        | $df_1$                  | $MSG$            | $F$ |
+| Within Groups       | $SS_{error}$        | $df_2$                  | $MSE$            |     |
+| Total               | $SS_{total}$        | $df$                    |                  |     |
 
 ### Multiple Mean: Kruskal-Wallis Test
 
@@ -347,13 +343,34 @@ It is a nonparametric test that can be used to determine whether three or more i
 - $H_0$: The $k$ distributions are identical  $k$ 个样本的分布相同
 - $H_a$: At least one of the $k$ distributions is different 至少有一个样本分布不同
 
-|  | Sample1 | Sample2 | Sample3 | Sample4 |
-|  | 65 (3)  | 75 (7)  | 59 (1)  | 94 (16) |
-|  | 87 (13) | 69 (5)  | 78 (8)  | 89 (15) |
-|  | 73 (6)  | 83 (12) | 67 (4)  | 80 (10) |
-|  | 79 (9)  | 81 (11) | 62 (2)  | 88 (14) |
-|$T_i$| 31    | 35    | 15    | 55    |
+|       | Sample1 | Sample2 | Sample3 | Sample4 |
+|-------|---------|---------|---------|---------|
+|       | 65 (3)  | 75 (7)  | 59 (1)  | 94 (16) |
+|       | 87 (13) | 69 (5)  | 78 (8)  | 89 (15) |
+|       | 73 (6)  | 83 (12) | 67 (4)  | 80 (10) |
+|       | 79 (9)  | 81 (11) | 62 (2)  | 88 (14) |
+| $T_i$ | 31      | 35      | 15      | 55      |
 
 $$
 H = \frac{12}{(N(N+1))} \sum \frac{T_i^2}{n_i} - 3(N+1) \sim \chi^2(k-1)
 $$
+
+## Chi-square Test
+
+Chi-square test is used to test the association between two categorical variables. 卡方检验用于检验两个分类变量之间的关联。
+
+$$
+\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i} \sim \chi^2(df)
+$$
+- $O_i$: observed frequency 观察频率
+- $E_i$: expected frequency 期望频率, $E_i = n \cdot p_i$
+
+### Independence Test
+
+- $H_0$: the distribution of the categorical variable is the same in each of the c populations 分类变量在每个总体中的分布相同
+- $df = (r-1)(c-1)$
+
+### Goodness-of-fit Test
+
+- $H_0$: the observed frequencies are consistent with the expected frequencies 观察频率与期望频率一致
+- $df = k-1$

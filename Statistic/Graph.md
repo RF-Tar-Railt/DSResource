@@ -152,10 +152,10 @@ $$
 \mu = np, \sigma = \sqrt{np(1-p)}
 $$
 
-| Binomial | Normal |
-| -------- | ------ |
-| $P(X = k)$ | $P(k - 0.5 \leq X \leq k + 0.5)$ |
-| $P(X \geq k)$ | $P(X \geq k - 0.5)$ |
-| $P(X > k)$ | $P(X > k + 0.5)$ |
-| $P(X \leq k)$ | $P(X \leq k + 0.5)$ |
-| $P(X < k)$ | $P(X < k - 0.5)$ |
+| Binomial      | Normal                           |
+|---------------|----------------------------------|
+| $P(X = k)$    | $P(k - 0.5 \leq X \leq k + 0.5)$ |
+| $P(X \geq k)$ | $P(X \geq k - 0.5)$              |
+| $P(X > k)$    | $P(X > k + 0.5)$                 |
+| $P(X \leq k)$ | $P(X \leq k + 0.5)$              |
+| $P(X < k)$    | $P(X < k - 0.5)$                 |

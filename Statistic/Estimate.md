@@ -117,11 +117,11 @@ $$
 
 ### Mean of a Population (总体均值的置信区间)
 
-| Distribution | Sample Size | $\sigma$ Known | $\sigma$ Unknown |
-| --- | --- | --- | --- |
-| Normal | Large | $\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$ | $\bar{x} \pm z_{\alpha/2} \cdot \frac{s}{\sqrt{n}}$ |
-| Normal | Small | $\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$ | $\bar{x} \pm t_{\alpha/2, df} \cdot \frac{s}{\sqrt{n}}$ |
-| Non-Normal | Large | $\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$ | $\bar{x} \pm z_{\alpha/2} \cdot \frac{s}{\sqrt{n}}$ |
+| Distribution | Sample Size | $\sigma$ Known                                           | $\sigma$ Unknown                                        |
+|--------------|-------------|----------------------------------------------------------|---------------------------------------------------------|
+| Normal       | Large       | $\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$ | $\bar{x} \pm z_{\alpha/2} \cdot \frac{s}{\sqrt{n}}$     |
+| Normal       | Small       | $\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$ | $\bar{x} \pm t_{\alpha/2, df} \cdot \frac{s}{\sqrt{n}}$ |
+| Non-Normal   | Large       | $\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$ | $\bar{x} \pm z_{\alpha/2} \cdot \frac{s}{\sqrt{n}}$     |
 - $\bar{x}$: sample mean
 - $\sigma$: population standard deviation
 - $s$: sample standard deviation
@@ -189,8 +189,8 @@ $$
 
 #### Paired Samples (配对样本)
 
-| $\sigma_d$ Known | $\sigma_d$ Unknown |
-| --- | --- |
+| $\sigma_d$ Known                                           | $\sigma_d$ Unknown                                        |
+|------------------------------------------------------------|-----------------------------------------------------------|
 | $\bar{d} \pm z_{\alpha/2} \cdot \frac{\sigma_d}{\sqrt{n}}$ | $\bar{d} \pm t_{\alpha/2, df} \cdot \frac{s_d}{\sqrt{n}}$ |
 - $\mu_d$: population mean of differences ($\mu_d = \mu_1 - \mu_2$)
 - $\bar{d}$: sample mean of differences
